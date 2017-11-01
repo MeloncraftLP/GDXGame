@@ -11,18 +11,6 @@ public class KeyHandler
     public static void KeyHandlerMeth()
     {
 
-        if(Gdx.input.isKeyPressed(Input.Keys.RIGHT))
-        {
-
-            Main.RunSprite.translateX(+12f);
-            Main.JumpSprite.translateX(+12f);
-//            Main.GeschenkeSprite.translateX(+12f);
-            Main.IdleSprite.translateX(+12f);
-
-            Main.RunSprite.draw(Main.batch);
-
-        }
-
         if(Gdx.input.isKeyPressed(Input.Keys.UP))
         {
 
@@ -34,7 +22,6 @@ public class KeyHandler
                 Main.RunSprite.translateY(+30f);
                 Main.JumpSprite.translateY(+30f);
 //               Main.GeschenkeSprite.translateY(+30f);
-                Main.IdleSprite.translateY(+30f);
 
             }
 
@@ -49,7 +36,6 @@ public class KeyHandler
                     Main.RunSprite.translateY(-30f);
                     Main.JumpSprite.translateY(-30f);
 //                    Main.GeschenkeSprite.translateY(-30f);
-                    Main.IdleSprite.translateY(-30f);
 
                 }
 
@@ -66,23 +52,21 @@ public class KeyHandler
          //   Main.GeschenkeSprite.translateX(-1f);
             Main.RunSprite.translateX(-1f);
             Main.JumpSprite.translateX(-1f);
-            Main.IdleSprite.translateX(-1f);
 
 //            Main.GeschenkeSprite.draw(Main.batch);
 
         }
 
-        if(Gdx.input.isKeyPressed(Input.Keys.ANY_KEY))
-        {
+    }
 
-        }
+    public static void Run()
+    {
 
-        else
-        {
+        Main.RunSprite.translateX(+12f);
+        Main.JumpSprite.translateX(+12f);
+//            Main.GeschenkeSprite.translateX(+12f);
 
-            Main.IdleSprite.draw(Main.batch);
-
-        }
+        Main.RunSprite.draw(Main.batch);
 
     }
 

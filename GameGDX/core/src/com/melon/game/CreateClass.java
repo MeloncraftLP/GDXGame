@@ -71,38 +71,6 @@ public class CreateClass
 
     }
 
-    public static void CreateAnimationIdle()
-    {
-
-        Main.IdleTexture = new Texture("Sprites/Idle.png");
-        Main.IdleRegion = TextureRegion.split(Main.IdleTexture, 934, 641);
-        Main.IdleSprite = new Sprite(Main.IdleRegion[0][0]);
-
-        Timer.schedule(new Timer.Task()
-        {
-
-            @Override
-            public void run()
-            {
-
-                Main.IdleZeile++;
-
-                if(Main.IdleZeile > 7)
-                {
-
-                    Main.IdleZeile = 0;
-
-                }
-
-                Main.IdleSprite.setRegion(Main.IdleRegion[Main.IdleZeile][0]);
-
-            }
-
-        },0, 1/23f);
-
-
-    }
-
     /*
 
     public static void CreateAnimationGeschenke()

@@ -15,25 +15,20 @@ public class Main extends ApplicationAdapter
     static int JumpTime = 0;
 
     static int RunZeile = 0;
-    static int IdleZeile = 0;
-    static int IdleSpalte = 0;
     static int GeschenkeFrame = 0;
     static int JumpZeile = 0;
 
     static SpriteBatch batch;
 
     static Texture RunTexture;
-    static Texture IdleTexture;
     static Texture GeschenkeTexture;
     static Texture JumpTexture;
 
     static TextureRegion [][] RunRegion;
-    static TextureRegion [][] IdleRegion;
     static TextureRegion [][] GeschenkeRegion;
     static TextureRegion [][] JumpRegion;
 
     static Sprite RunSprite;
-    static Sprite IdleSprite;
     static Sprite GeschenkeSprite;
     static Sprite JumpSprite;
 
@@ -45,7 +40,6 @@ public class Main extends ApplicationAdapter
 
         CreateClass.CreateAnimationRun();
         CreateClass.CreateAnimationJump();
-        CreateClass.CreateAnimationIdle();
         //CreateClass.CreateAnimationGeschenke();
 
     }
@@ -59,6 +53,7 @@ public class Main extends ApplicationAdapter
 
         batch.begin();
 
+        KeyHandler.Run();
         KeyHandler.KeyHandlerMeth();
 
         batch.end();
@@ -72,7 +67,6 @@ public class Main extends ApplicationAdapter
         batch.dispose();
 
         RunTexture.dispose();
-        IdleTexture.dispose();
         JumpTexture.dispose();
         GeschenkeTexture.dispose();
 
