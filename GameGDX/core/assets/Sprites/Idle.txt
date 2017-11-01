@@ -1,0 +1,117 @@
+Jump.png
+size: 1868, 5128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Idle (1)
+  rotate: false
+  xy: 0, 0
+  size: 934, 641
+  orig: 934, 641
+  offset: 0, 0
+  index: -1
+Idle (2)
+  rotate: false
+  xy: 934, 0
+  size: 934, 641
+  orig: 934, 641
+  offset: 0, 0
+  index: -1
+Idle (3)
+  rotate: false
+  xy: 0, 641
+  size: 934, 641
+  orig: 934, 641
+  offset: 0, 0
+  index: -1
+Idle (4)
+  rotate: false
+  xy: 934, 641
+  size: 934, 641
+  orig: 934, 641
+  offset: 0, 0
+  index: -1
+Idle (5)
+  rotate: false
+  xy: 0, 1282
+  size: 934, 641
+  orig: 934, 641
+  offset: 0, 0
+  index: -1
+Idle (6)
+  rotate: false
+  xy: 934, 1282
+  size: 934, 641
+  orig: 934, 641
+  offset: 0, 0
+  index: -1
+Idle (7)
+  rotate: false
+  xy: 0, 1923
+  size: 934, 641
+  orig: 934, 641
+  offset: 0, 0
+  index: -1
+Idle (8)
+  rotate: false
+  xy: 934, 1923
+  size: 934, 641
+  orig: 934, 641
+  offset: 0, 0
+  index: -1
+Idle (9)
+  rotate: false
+  xy: 0, 2564
+  size: 934, 641
+  orig: 934, 641
+  offset: 0, 0
+  index: -1
+Idle (10)
+  rotate: false
+  xy: 934, 2564
+  size: 934, 641
+  orig: 934, 641
+  offset: 0, 0
+  index: -1
+Idle (11)
+  rotate: false
+  xy: 0, 3205
+  size: 934, 641
+  orig: 934, 641
+  offset: 0, 0
+  index: -1
+Idle (12)
+  rotate: false
+  xy: 934, 3205
+  size: 934, 641
+  orig: 934, 641
+  offset: 0, 0
+  index: -1
+Idle (13)
+  rotate: false
+  xy: 0, 3846
+  size: 934, 641
+  orig: 934, 641
+  offset: 0, 0
+  index: -1
+Idle (14)
+  rotate: false
+  xy: 934, 3846
+  size: 934, 641
+  orig: 934, 641
+  offset: 0, 0
+  index: -1
+Idle (15)
+  rotate: false
+  xy: 0, 4487
+  size: 934, 641
+  orig: 934, 641
+  offset: 0, 0
+  index: -1
+Idle (16)
+  rotate: false
+  xy: 934, 4487
+  size: 934, 641
+  orig: 934, 641
+  offset: 0, 0
+  index: -1
