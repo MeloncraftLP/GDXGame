@@ -41,21 +41,18 @@ public class KeyHandler
             else
             {
 
-                while(Main.JumpTime > 0)
-                {
-
-                    Main.JumpTime -= 30;
-
-                    Main.RunSprite.translateY(-30f);
-                    Main.JumpSprite.translateY(-30f);
-//                    Main.GeschenkeSprite.translateY(-30f);
-                    Main.IdleSprite.translateY(-30f);
-
-                }
+                KeyHandler.RunterFallen();
 
             }
 
             Main.JumpSprite.draw(Main.batch);
+
+        }
+
+        else
+        {
+
+            KeyHandler.RunterFallen();
 
         }
 
@@ -83,6 +80,24 @@ public class KeyHandler
             Main.IdleSprite.draw(Main.batch);
 
         }
+
+    }
+
+    static void RunterFallen()
+    {
+
+        while(Main.JumpTime > 0)
+        {
+
+            Main.JumpTime -= 30;
+
+            Main.RunSprite.translateY(-30f);
+            Main.JumpSprite.translateY(-30f);
+//                    Main.GeschenkeSprite.translateY(-30f);
+            Main.IdleSprite.translateY(-30f);
+
+        }
+
 
     }
 
