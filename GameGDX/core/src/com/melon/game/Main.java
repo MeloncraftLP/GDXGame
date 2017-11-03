@@ -20,6 +20,11 @@ public class Main extends ApplicationAdapter
     static int GeschenkeFrame = 0;
     static int JumpZeile = 0;
 
+    static boolean RunAnimationBool = false;
+    static boolean IdleAnimationBool = false;
+    static boolean JumpAnimationBool = false;
+    static boolean GeschenkeAnimationBool = false;
+
     static SpriteBatch batch;
 
     static Texture RunTexture;
@@ -60,6 +65,10 @@ public class Main extends ApplicationAdapter
         batch.begin();
 
         KeyHandler.KeyHandlerMeth();
+        RunAnimationBool = false;
+        JumpAnimationBool = false;
+        GeschenkeAnimationBool = false;
+        IdleAnimationBool = false;
 
         batch.end();
 
@@ -79,7 +88,4 @@ public class Main extends ApplicationAdapter
     }
 
 }
-
-
-//TODO Andere Klassen noch dazu machen
 

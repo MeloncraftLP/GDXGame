@@ -11,8 +11,10 @@ public class KeyHandler
     public static void KeyHandlerMeth()
     {
 
-        if(Gdx.input.isKeyPressed(Input.Keys.RIGHT))
+        if(Gdx.input.isKeyPressed(Input.Keys.RIGHT) && Main.RunAnimationBool == false)
         {
+
+            Main.RunAnimationBool = true;
 
             Main.RunSprite.translateX(+12f);
             Main.JumpSprite.translateX(+12f);
@@ -23,18 +25,41 @@ public class KeyHandler
 
         }
 
-        if(Gdx.input.isKeyPressed(Input.Keys.UP))
+        if(Gdx.input.isKeyPressed(Input.Keys.LEFT) && Main.RunAnimationBool == false)
         {
 
-            if(Main.JumpTime < 510)
+            Main.RunAnimationBool = true;
+
+            Main.RunSprite.translateX(-12f);
+            Main.JumpSprite.translateX(-12f);
+//            Main.GeschenkeSprite.translateX(-12f);
+            Main.IdleSprite.translateX(-12f);
+
+            if(Main.RunSprite.isFlipX() == false)
             {
 
-                Main.JumpTime += 30;
+                Main.RunSprite.flip(true, false);
 
-                Main.RunSprite.translateY(+30f);
-                Main.JumpSprite.translateY(+30f);
-//               Main.GeschenkeSprite.translateY(+30f);
-                Main.IdleSprite.translateY(+30f);
+            }
+
+            Main.RunSprite.draw(Main.batch);
+
+        }
+
+        if(Gdx.input.isKeyPressed(Input.Keys.UP) && Main.JumpAnimationBool == false)
+        {
+
+            Main.JumpAnimationBool = true;
+
+            if(Main.JumpTime < 340)
+            {
+
+                Main.JumpTime += 20;
+
+                Main.RunSprite.translateY(+20f);
+                Main.JumpSprite.translateY(+20f);
+//               Main.GeschenkeSprite.translateY(+20f);
+                Main.IdleSprite.translateY(+20f);
 
             }
 
@@ -45,7 +70,12 @@ public class KeyHandler
 
             }
 
-            Main.JumpSprite.draw(Main.batch);
+            if(Main.RunAnimationBool == false)
+            {
+
+                Main.JumpSprite.draw(Main.batch);
+
+            }
 
         }
 
@@ -57,8 +87,10 @@ public class KeyHandler
         }
 
 
-        if(Gdx.input.isKeyPressed(Input.Keys.DOWN))
+        if(Gdx.input.isKeyPressed(Input.Keys.DOWN) && Main.GeschenkeAnimationBool == false)
         {
+
+            Main.GeschenkeAnimationBool = true;
 
          //   Main.GeschenkeSprite.translateX(-1f);
             Main.RunSprite.translateX(-1f);
@@ -86,18 +118,17 @@ public class KeyHandler
     static void RunterFallen()
     {
 
-        while(Main.JumpTime > 0)
+        if(Main.JumpTime > 0)
         {
 
-            Main.JumpTime -= 30;
+            Main.JumpTime -= 40;
 
-            Main.RunSprite.translateY(-30f);
-            Main.JumpSprite.translateY(-30f);
-//                    Main.GeschenkeSprite.translateY(-30f);
-            Main.IdleSprite.translateY(-30f);
+            Main.RunSprite.translateY(-40f);
+            Main.JumpSprite.translateY(-40f);
+//                    Main.GeschenkeSprite.translateY(-40f);
+            Main.IdleSprite.translateY(-40f);
 
         }
-
 
     }
 
