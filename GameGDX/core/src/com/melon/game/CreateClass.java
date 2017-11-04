@@ -11,11 +11,11 @@ public class CreateClass
     public static void CreateAnimationJump()
     {
 
-        Main.JumpTexture = new Texture("Sprites/Jump.png");
-        Main.JumpRegion = TextureRegion.split(Main.JumpTexture, 934, 641);
-        Main.JumpSprite = new Sprite(Main.JumpRegion[0][0]);
+        Main.JumpTexture = new Texture("Sprites/Jump.png"); //Spritesheet
+        Main.JumpRegion = TextureRegion.split(Main.JumpTexture, 934, 641); //Einzelne Größe Bild
+        Main.JumpSprite = new Sprite(Main.JumpRegion[0][0]); //Array [yCord][xCord]
 
-        Timer.schedule(new Timer.Task()
+        Timer.schedule(new Timer.Task() //23fps
         {
 
             @Override
@@ -24,14 +24,14 @@ public class CreateClass
 
                 Main.JumpZeile++;
 
-                if(Main.JumpZeile > 15)
+                if(Main.JumpZeile > 15) //nach 16tes Bild...
                 {
 
-                    Main.JumpZeile = 0;
+                    Main.JumpZeile = 0; //...reset (0)
 
                 }
 
-                Main.JumpSprite.setRegion(Main.JumpRegion[Main.JumpZeile][0]);
+                Main.JumpSprite.setRegion(Main.JumpRegion[Main.JumpZeile][0]); //Festlegen welches Bild kommt
 
             }
 
@@ -43,11 +43,11 @@ public class CreateClass
     public static void CreateAnimationRun()
     {
 
-        Main.RunTexture = new Texture("Sprites/Run.png");
-        Main.RunRegion = TextureRegion.split(Main.RunTexture, 934, 641);
-        Main.RunSprite = new Sprite(Main.RunRegion[0][0]);
+        Main.RunTexture = new Texture("Sprites/Run.png"); //Spritesheet
+        Main.RunRegion = TextureRegion.split(Main.RunTexture, 934, 641); //Bildgröße
+        Main.RunSprite = new Sprite(Main.RunRegion[0][0]); //Array [yCord][xCord]
 
-        Timer.schedule(new Timer.Task()
+        Timer.schedule(new Timer.Task() //Timer 20fps
         {
 
             @Override
@@ -56,14 +56,14 @@ public class CreateClass
 
                 Main.RunZeile++;
 
-                if(Main.RunZeile > 10)
+                if(Main.RunZeile > 10) //nach 11tes Bild...
                 {
 
-                    Main.RunZeile = 0;
+                    Main.RunZeile = 0; //reset (0)
 
                 }
 
-                Main.RunSprite.setRegion(Main.RunRegion[Main.RunZeile][0]);
+                Main.RunSprite.setRegion(Main.RunRegion[Main.RunZeile][0]); //Bild ändern
 
             }
 
@@ -74,11 +74,11 @@ public class CreateClass
     public static void CreateAnimationIdle()
     {
 
-        Main.IdleTexture = new Texture("Sprites/Idle.png");
-        Main.IdleRegion = TextureRegion.split(Main.IdleTexture, 934, 641);
-        Main.IdleSprite = new Sprite(Main.IdleRegion[0][0]);
+        Main.IdleTexture = new Texture("Sprites/Idle.png"); //Spritesheet
+        Main.IdleRegion = TextureRegion.split(Main.IdleTexture, 934, 641); //Bildgröße
+        Main.IdleSprite = new Sprite(Main.IdleRegion[0][0]); //Array [yCord][xCord]
 
-        Timer.schedule(new Timer.Task()
+        Timer.schedule(new Timer.Task() //Timer 20fps
         {
 
             @Override
@@ -87,14 +87,14 @@ public class CreateClass
 
                 Main.IdleZeile++;
 
-                if(Main.IdleZeile > 7)
+                if(Main.IdleZeile > 7) //nach 8tes Bild reset (0)
                 {
 
                     Main.IdleZeile = 0;
 
                 }
 
-                Main.IdleSprite.setRegion(Main.IdleRegion[Main.IdleZeile][0]);
+                Main.IdleSprite.setRegion(Main.IdleRegion[Main.IdleZeile][0]); //Bild ändern
 
             }
 
