@@ -138,4 +138,13 @@ public class CreateClass
 
         */
 
+    public static void CreateTree()
+    {
+
+        Main.TreeTexture = new Texture("Sprites/Idle.png"); //Bild von Baum
+        Main.TreeSprite = new Sprite(Main.TreeTexture); //Sprite = Texture
+        Main.TreeSprite.setPosition(0,0);
+
+    }
+
 }

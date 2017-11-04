@@ -2,6 +2,7 @@ package com.melon.game;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
@@ -28,9 +29,11 @@ public class Main extends ApplicationAdapter
     //static boolean GeschenkeAnimationBool = false;
 
     //libGDX:
-    static SpriteBatch batch;
+    static SpriteBatch AnimationBatch;
+//    static SpriteBatch TreeBatch;
 
     static Texture RunTexture;
+    static Texture TreeTexture;
     static Texture IdleTexture;
     //static Texture GeschenkeTexture;
     static Texture JumpTexture;
@@ -41,6 +44,7 @@ public class Main extends ApplicationAdapter
     static TextureRegion [][] JumpRegion;
 
     static Sprite RunSprite;
+    static Sprite TreeSprite;
     static Sprite IdleSprite;
     //static Sprite GeschenkeSprite;
     static Sprite JumpSprite;
@@ -49,13 +53,16 @@ public class Main extends ApplicationAdapter
     public void create()
     {
 
-        batch = new SpriteBatch();
+        AnimationBatch = new SpriteBatch();
 
         //Animationen
         CreateClass.CreateAnimationRun();
         CreateClass.CreateAnimationJump();
         CreateClass.CreateAnimationIdle();
+        CreateClass.CreateTree();
         //CreateClass.CreateAnimationGeschenke();
+
+        Gdx.input.setInputProcessor();
 
     }
 
@@ -66,24 +73,22 @@ public class Main extends ApplicationAdapter
         Gdx.gl.glClearColor(1, 1, 1, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
-        batch.begin(); //projector
+        AnimationBatch.begin();//projector
 
-        KeyHandler.KeyHandlerMeth(); //Keys abfragen (siehe KeyHandler.java)
-
-        /*
-            Diese Booleans sind Vetreter für die Animationen.
-            Wenn eine Animation läuft werden diese Booleans auf true gesetzt.
-            Jetzt werden sie wieder alle für den nächsten Run vorbereitet.
-            Alle werden auf false gesetzt
-         */
-
-        RunAnimationBool = false;
+        RunAnimationBool = false; //Booleans
         JumpAnimationBool = false;
         RunterfallenBool = false;
        // GeschenkeAnimationBool = false;
         IdleAnimationBool = false;
 
-        batch.end();
+        AnimationBatch.end();
+
+        /*
+                Diese Booleans sind Vetreter für die Animationen.
+                Wenn eine Animation läuft werden diese Booleans auf true gesetzt.
+                Jetzt werden sie wieder alle für den nächsten Run vorbereitet.
+                Alle werden auf false gesetzt
+            */
 
     }
 
@@ -92,7 +97,7 @@ public class Main extends ApplicationAdapter
     {
 
         //beenden
-        batch.dispose();
+        AnimationBatch.dispose();
 
         RunTexture.dispose();
         IdleTexture.dispose();

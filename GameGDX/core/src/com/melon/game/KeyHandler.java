@@ -3,6 +3,7 @@ package com.melon.game;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+import com.badlogic.gdx.InputProcessor;
 
 
 public class KeyHandler
@@ -11,7 +12,7 @@ public class KeyHandler
     public static void KeyHandlerMeth()
     {
 
-        if(Gdx.input.isKeyPressed(Input.Keys.RIGHT) && Main.RunAnimationBool == false) //Pfeil-Rechts und nicht rennen
+        if(keycode == Input.Keys.RIGHT && Main.RunAnimationBool == false) //Pfeil-Rechts und nicht rennen
         {
 
             Main.RunAnimationBool = true; //Rennen = true
@@ -22,11 +23,11 @@ public class KeyHandler
 //            Main.GeschenkeSprite.translateX(+12f);
             Main.IdleSprite.translateX(+12f);
 
-            Main.RunSprite.draw(Main.batch); //Laufanimation projezieren
+            Main.RunSprite.draw(Main.AnimationBatch); //Laufanimation projezieren
 
         }
 
-        if(Gdx.input.isKeyPressed(Input.Keys.LEFT) && Main.RunAnimationBool == false) //Pfeil-Links und nicht rennen
+        if(keycode == Input.Keys.LEFT && Main.RunAnimationBool == false) //Pfeil-Links und nicht rennen
         {
 
             Main.RunAnimationBool = true; //Rennen = true
@@ -44,11 +45,11 @@ public class KeyHandler
 
             }
 
-            Main.RunSprite.draw(Main.batch); //Laufanimation projezieren
+            Main.RunSprite.draw(Main.AnimationBatch); //Laufanimation projezieren
 
         }
 
-        if(Gdx.input.isKeyPressed(Input.Keys.UP) && Main.JumpAnimationBool == false) //Wenn Pfeil-Hochh und nicht springen
+        if(keycode == Input.Keys.UP && Main.JumpAnimationBool == false) //Wenn Pfeil-Hochh und nicht springen
         {
 
             Main.JumpAnimationBool = true; //Springen = true
@@ -76,7 +77,7 @@ public class KeyHandler
             if(Main.RunAnimationBool == false) //Schließlich wenn man nicht rennt:
             {
 
-                Main.JumpSprite.draw(Main.batch); //Sprunganimation projezieren
+                Main.JumpSprite.draw(Main.AnimationBatch); //Sprunganimation projezieren
 
             }
 
@@ -90,7 +91,7 @@ public class KeyHandler
         }
 
 /*
-        if(Gdx.input.isKeyPressed(Input.Keys.DOWN) && Main.GeschenkeAnimationBool == false)
+        if(keycode == Input.Keys.DOWN && Main.GeschenkeAnimationBool == false)
         {
 
             Main.GeschenkeAnimationBool = true;
@@ -100,7 +101,7 @@ public class KeyHandler
             Main.JumpSprite.translateX(-1f);
             Main.IdleSprite.translateX(-1f);
 
-//            Main.GeschenkeSprite.draw(Main.batch);
+//            Main.GeschenkeSprite.draw(Main.AnimationBatch);
 
         }
 
@@ -109,14 +110,10 @@ public class KeyHandler
         if(Gdx.input.isKeyPressed(Input.Keys.ANY_KEY))
         {
 
-        }
-
-        else //wenn keine Taste gedrückt wird:
-        {
-
-            Main.IdleSprite.draw(Main.batch); //Idleanimation projezieren
+            Main.IdleSprite.draw(Main.AnimationBatch); //Idleanimation projezieren
 
         }
+
 
     }
 
