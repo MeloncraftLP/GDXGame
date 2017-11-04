@@ -6,31 +6,10 @@ import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
 
 
-public class KeyHandler  implements InputProcessor
+public class KeyHandler
 {
 
-    static void RunterFallen() //Runterfallen-Methode
-    {
-
-        Main.RunterfallenBool = true; //Runterfallen(Kopie) true
-
-        if(Main.JumpTime > 0) //Wenn in der Luft
-        {
-
-            Main.JumpTime -= 40; //yCord(Kopie) -40(y)
-
-            //Alle Sprites -40(y) bewegen
-            Main.RunSprite.translateY(-40f);
-            Main.JumpSprite.translateY(-40f);
-//                    Main.GeschenkeSprite.translateY(-40f);
-            Main.IdleSprite.translateY(-40f);
-
-        }
-
-    }
-
-    @Override
-    public boolean keyDown(int keycode)
+    public static void KeyHandlerMeth()
     {
 
         if(keycode == Input.Keys.RIGHT && Main.RunAnimationBool == false) //Pfeil-Rechts und nicht rennen
@@ -103,6 +82,14 @@ public class KeyHandler  implements InputProcessor
             }
 
         }
+
+        else //Wenn man nicht die Sprungstaste drückt
+        {
+
+            KeyHandler.RunterFallen(); //Runterfallen
+
+        }
+
 /*
         if(keycode == Input.Keys.DOWN && Main.GeschenkeAnimationBool == false)
         {
@@ -120,66 +107,34 @@ public class KeyHandler  implements InputProcessor
 
         */
 
-        if(keycode != Input.Keys.ANY_KEY) //wenn keine Taste gedrückt wird
+        if(Gdx.input.isKeyPressed(Input.Keys.ANY_KEY))
         {
 
             Main.IdleSprite.draw(Main.AnimationBatch); //Idleanimation projezieren
 
         }
 
-        return true;
+
     }
 
-    @Override
-    public boolean keyUp(int keycode)
+    static void RunterFallen() //Runterfallen-Methode
     {
 
-        if(keycode == Input.Keys.UP)
+        Main.RunterfallenBool = true; //Runterfallen(Kopie) true
+
+        if(Main.JumpTime > 0) //Wenn in der Luft
         {
 
-            KeyHandler.RunterFallen();
+            Main.JumpTime -= 40; //yCord(Kopie) -40(y)
+
+            //Alle Sprites -40(y) bewegen
+            Main.RunSprite.translateY(-40f);
+            Main.JumpSprite.translateY(-40f);
+//                    Main.GeschenkeSprite.translateY(-40f);
+            Main.IdleSprite.translateY(-40f);
 
         }
 
-        return true;
-
     }
-
-    @Override
-    public boolean keyTyped(char character)
-    {
-        return false;
-    }
-
-    @Override
-    public boolean touchDown(int screenX, int screenY, int pointer, int button)
-    {
-        return false;
-    }
-
-    @Override
-    public boolean touchUp(int screenX, int screenY, int pointer, int button)
-    {
-        return false;
-    }
-
-    @Override
-    public boolean touchDragged(int screenX, int screenY, int pointer)
-    {
-        return false;
-    }
-
-    @Override
-    public boolean mouseMoved(int screenX, int screenY)
-    {
-        return false;
-    }
-
-    @Override
-    public boolean scrolled(int amount)
-    {
-        return false;
-    }
-
 
 }
