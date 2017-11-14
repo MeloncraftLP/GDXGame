@@ -11,9 +11,9 @@ public class CreateClass
     public static void CreateAnimationJump()
     {
 
-        Main.JumpTexture = new Texture("Sprites/Jump.png"); //Spritesheet
-        Main.JumpRegion = TextureRegion.split(Main.JumpTexture, 934, 641); //Einzelne Größe Bild
-        Main.JumpSprite = new Sprite(Main.JumpRegion[0][0]); //Array [yCord][xCord]
+        Var.JumpTexture = new Texture("Sprites/Jump.png"); //Spritesheet
+        Var.JumpRegion = TextureRegion.split(Var.JumpTexture, 934, 641); //Einzelne Größe Bild
+        Var.JumpSprite = new Sprite(Var.JumpRegion[0][0]); //Array [yCord][xCord]
 
         Timer.schedule(new Timer.Task() //23fps
         {
@@ -22,16 +22,16 @@ public class CreateClass
             public void run()
             {
 
-                Main.JumpZeile++;
+                Var.JumpZeile++;
 
-                if(Main.JumpZeile > 15) //nach 16tes Bild...
+                if(Var.JumpZeile > 15) //nach 16tes Bild...
                 {
 
-                    Main.JumpZeile = 0; //...reset (0)
+                    Var.JumpZeile = 0; //...reset (0)
 
                 }
 
-                Main.JumpSprite.setRegion(Main.JumpRegion[Main.JumpZeile][0]); //Festlegen welches Bild kommt
+                Var.JumpSprite.setRegion(Var.JumpRegion[Var.JumpZeile][0]); //Festlegen welches Bild kommt
 
             }
 
@@ -43,9 +43,9 @@ public class CreateClass
     public static void CreateAnimationRun()
     {
 
-        Main.RunTexture = new Texture("Sprites/Run.png"); //Spritesheet
-        Main.RunRegion = TextureRegion.split(Main.RunTexture, 934, 641); //Bildgröße
-        Main.RunSprite = new Sprite(Main.RunRegion[0][0]); //Array [yCord][xCord]
+        Var.RunTexture = new Texture("Sprites/Run.png"); //Spritesheet
+        Var.RunRegion = TextureRegion.split(Var.RunTexture, 934, 641); //Bildgröße
+        Var.RunSprite = new Sprite(Var.RunRegion[0][0]); //Array [yCord][xCord]
 
         Timer.schedule(new Timer.Task() //Timer 20fps
         {
@@ -54,16 +54,16 @@ public class CreateClass
             public void run()
             {
 
-                Main.RunZeile++;
+                Var.RunZeile++;
 
-                if(Main.RunZeile > 10) //nach 11tes Bild...
+                if(Var.RunZeile > 10) //nach 11tes Bild...
                 {
 
-                    Main.RunZeile = 0; //reset (0)
+                    Var.RunZeile = 0; //reset (0)
 
                 }
 
-                Main.RunSprite.setRegion(Main.RunRegion[Main.RunZeile][0]); //Bild ändern
+                Var.RunSprite.setRegion(Var.RunRegion[Var.RunZeile][0]); //Bild ändern
 
             }
 
@@ -74,9 +74,9 @@ public class CreateClass
     public static void CreateAnimationIdle()
     {
 
-        Main.IdleTexture = new Texture("Sprites/Idle.png"); //Spritesheet
-        Main.IdleRegion = TextureRegion.split(Main.IdleTexture, 934, 641); //Bildgröße
-        Main.IdleSprite = new Sprite(Main.IdleRegion[0][0]); //Array [yCord][xCord]
+        Var.IdleTexture = new Texture("Sprites/Idle.png"); //Spritesheet
+        Var.IdleRegion = TextureRegion.split(Var.IdleTexture, 934, 641); //Bildgröße
+        Var.IdleSprite = new Sprite(Var.IdleRegion[0][0]); //Array [yCord][xCord]
 
         Timer.schedule(new Timer.Task() //Timer 20fps
         {
@@ -85,16 +85,16 @@ public class CreateClass
             public void run()
             {
 
-                Main.IdleZeile++;
+                Var.IdleZeile++;
 
-                if(Main.IdleZeile > 7) //nach 8tes Bild reset (0)
+                if(Var.IdleZeile > 7) //nach 8tes Bild reset (0)
                 {
 
-                    Main.IdleZeile = 0;
+                    Var.IdleZeile = 0;
 
                 }
 
-                Main.IdleSprite.setRegion(Main.IdleRegion[Main.IdleZeile][0]); //Bild ändern
+                Var.IdleSprite.setRegion(Var.IdleRegion[Var.IdleZeile][0]); //Bild ändern
 
             }
 
@@ -141,9 +141,9 @@ public class CreateClass
     public static void CreateTree()
     {
 
-        Main.TreeTexture = new Texture("Sprites/Idle.png"); //Bild von Baum
-        Main.TreeSprite = new Sprite(Main.TreeTexture); //Sprite = Texture
-        Main.TreeSprite.setPosition(0,0);
+        Var.TreeTexture = new Texture("Sprites/Idle.png"); //Bild von Baum
+        Var.TreeSprite = new Sprite(Var.TreeTexture); //Sprite = Texture
+        Var.TreeSprite.setPosition(0,0);
 
     }
 

@@ -12,58 +12,58 @@ public class KeyHandler
     public static void KeyHandlerMeth()
     {
 
-        if(keycode == Input.Keys.RIGHT && Main.RunAnimationBool == false) //Pfeil-Rechts und nicht rennen
+        if(Gdx.input.isKeyPressed(Input.Keys.RIGHT) && Var.RunAnimationBool == false) //Pfeil-Rechts und nicht rennen
         {
 
-            Main.RunAnimationBool = true; //Rennen = true
+            Var.RunAnimationBool = true; //Rennen = true
 
             //Alle Sprites um +12(x) bewegen
-            Main.RunSprite.translateX(+12f);
-            Main.JumpSprite.translateX(+12f);
+            Var.RunSprite.translateX(+12f);
+            Var.JumpSprite.translateX(+12f);
 //            Main.GeschenkeSprite.translateX(+12f);
-            Main.IdleSprite.translateX(+12f);
+            Var.IdleSprite.translateX(+12f);
 
-            Main.RunSprite.draw(Main.AnimationBatch); //Laufanimation projezieren
+            Var.RunSprite.draw(Var.AnimationBatch); //Laufanimation projezieren
 
         }
 
-        if(keycode == Input.Keys.LEFT && Main.RunAnimationBool == false) //Pfeil-Links und nicht rennen
+        if(Gdx.input.isKeyPressed(Input.Keys.LEFT) && Var.RunAnimationBool == false) //Pfeil-Links und nicht rennen
         {
 
-            Main.RunAnimationBool = true; //Rennen = true
+            Var.RunAnimationBool = true; //Rennen = true
 
             //Alle Sprites um -12(x) bewegen
-            Main.RunSprite.translateX(-12f);
-            Main.JumpSprite.translateX(-12f);
+            Var.RunSprite.translateX(-12f);
+            Var.JumpSprite.translateX(-12f);
 //            Main.GeschenkeSprite.translateX(-12f);
-            Main.IdleSprite.translateX(-12f);
+            Var.IdleSprite.translateX(-12f);
 
-            if(Main.RunSprite.isFlipX() == false) //wenn Spieler nach rechts guckt
+            if(Var.RunSprite.isFlipX() == false) //wenn Spieler nach rechts guckt
             {
 
-                Main.RunSprite.flip(true, false); //Spieler drehen
+                Var.RunSprite.flip(true, false); //Spieler drehen
 
             }
 
-            Main.RunSprite.draw(Main.AnimationBatch); //Laufanimation projezieren
+            Var.RunSprite.draw(Var.AnimationBatch); //Laufanimation projezieren
 
         }
 
-        if(keycode == Input.Keys.UP && Main.JumpAnimationBool == false) //Wenn Pfeil-Hochh und nicht springen
+        if(Gdx.input.isKeyPressed(Input.Keys.UP) && Var.JumpAnimationBool == false) //Wenn Pfeil-Hochh und nicht springen
         {
 
-            Main.JumpAnimationBool = true; //Springen = true
+            Var.JumpAnimationBool = true; //Springen = true
 
-            if(Main.JumpTime < 460) //Wenn yCord(Kopie) < 460 und nicht Runterfallen:
+            if(Var.JumpTime < 460) //Wenn yCord(Kopie) < 460 und nicht Runterfallen:
             {
 
-                Main.JumpTime += 20; //yCord(Kopie) +20
+                Var.JumpTime += 20; //yCord(Kopie) +20
 
                 //Alle Sprites +20(y) bewegen
-                Main.RunSprite.translateY(+20f);
-                Main.JumpSprite.translateY(+20f);
+                Var.RunSprite.translateY(+20f);
+                Var.JumpSprite.translateY(+20f);
 //               Main.GeschenkeSprite.translateY(+20f);4
-                Main.IdleSprite.translateY(+20f);
+                Var.IdleSprite.translateY(+20f);
 
             }
 
@@ -74,10 +74,10 @@ public class KeyHandler
 
             }
 
-            if(Main.RunAnimationBool == false) //Schließlich wenn man nicht rennt:
+            if(Var.RunAnimationBool == false) //Schließlich wenn man nicht rennt:
             {
 
-                Main.JumpSprite.draw(Main.AnimationBatch); //Sprunganimation projezieren
+                Var.JumpSprite.draw(Var.AnimationBatch); //Sprunganimation projezieren
 
             }
 
@@ -110,7 +110,11 @@ public class KeyHandler
         if(Gdx.input.isKeyPressed(Input.Keys.ANY_KEY))
         {
 
-            Main.IdleSprite.draw(Main.AnimationBatch); //Idleanimation projezieren
+        }
+        else
+        {
+
+            Var.IdleSprite.draw(Var.AnimationBatch); //Idleanimation projezieren
 
         }
 
@@ -120,18 +124,18 @@ public class KeyHandler
     static void RunterFallen() //Runterfallen-Methode
     {
 
-        Main.RunterfallenBool = true; //Runterfallen(Kopie) true
+        Var.RunterfallenBool = true; //Runterfallen(Kopie) true
 
-        if(Main.JumpTime > 0) //Wenn in der Luft
+        if(Var.JumpTime > 0) //Wenn in der Luft
         {
 
-            Main.JumpTime -= 40; //yCord(Kopie) -40(y)
+            Var.JumpTime -= 40; //yCord(Kopie) -40(y)
 
             //Alle Sprites -40(y) bewegen
-            Main.RunSprite.translateY(-40f);
-            Main.JumpSprite.translateY(-40f);
+            Var.RunSprite.translateY(-40f);
+            Var.JumpSprite.translateY(-40f);
 //                    Main.GeschenkeSprite.translateY(-40f);
-            Main.IdleSprite.translateY(-40f);
+            Var.IdleSprite.translateY(-40f);
 
         }
 
