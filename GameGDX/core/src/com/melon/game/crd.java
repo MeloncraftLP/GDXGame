@@ -2,7 +2,6 @@ package com.melon.game;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class crd
@@ -31,6 +30,10 @@ public class crd
         Var.AnimationBatch.begin();//projector
 
         KeyHandler.KeyHandlerMeth();
+        Var.TreeSprite.draw(Var.AnimationBatch);
+        //Var.TreeSprite.draw(Var.AnimationBatch);
+        Var.HitBoxPlayer.set((int)Var.RunSprite.getX(), (int)Var.RunSprite.getY(), (int)Var.RunSprite.getWidth(),  (int)Var.RunSprite.getHeight());
+        Var.HitBoxBaum.set((int)Var.TreeSprite.getX(), (int)Var.TreeSprite.getY(), (int) Var.TreeSprite.getWidth(), (int)Var.TreeSprite.getHeight());
 
         Var.RunAnimationBool = false; //Booleans
         Var.JumpAnimationBool = false;
@@ -59,6 +62,8 @@ public class crd
         Var.IdleTexture.dispose();
         Var.JumpTexture.dispose();
         //GeschenkeTexture.dispose();
+
+        Var.Logo.dispose();
 
     }
 

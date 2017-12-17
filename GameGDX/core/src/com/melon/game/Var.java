@@ -5,9 +5,18 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.math.*;
+import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
+import com.badlogic.gdx.physics.box2d.World;
+
+import java.awt.*;
+import java.awt.Rectangle;
 
 public class Var
 {
+
+    static com.badlogic.gdx.math.Rectangle HitBoxPlayer = new com.badlogic.gdx.math.Rectangle();
+    static com.badlogic.gdx.math.Rectangle HitBoxBaum = new com.badlogic.gdx.math.Rectangle();
 
     //Var:
     static int JumpTime = 0;
@@ -18,6 +27,8 @@ public class Var
     // static int GeschenkeFrame = 0;
     static int JumpZeile = 0;
 
+    static Texture Logo = new Texture("Logo.png");
+
     static boolean RunAnimationBool = false;
     static boolean IdleAnimationBool = false;
     static boolean JumpAnimationBool = false;
@@ -26,7 +37,8 @@ public class Var
 
     //libGDX:
     static SpriteBatch AnimationBatch;
-//    static SpriteBatch TreeBatch;
+
+    static TextureRegion [][] TreeRegion;
 
     static Texture RunTexture;
     static Texture TreeTexture;
@@ -44,6 +56,5 @@ public class Var
     static Sprite IdleSprite;
     //static Sprite GeschenkeSprite;
     static Sprite JumpSprite;
-
 
 }

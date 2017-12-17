@@ -18,10 +18,10 @@ public class KeyHandler
             Var.RunAnimationBool = true; //Rennen = true
 
             //Alle Sprites um +12(x) bewegen
-            Var.RunSprite.translateX(+12f);
-            Var.JumpSprite.translateX(+12f);
-//            Main.GeschenkeSprite.translateX(+12f);
-            Var.IdleSprite.translateX(+12f);
+            Var.RunSprite.translateX(+24f);
+            Var.JumpSprite.translateX(+24f);
+//            Main.GeschenkeSprite.translateX(+24f);
+            Var.IdleSprite.translateX(+24f);
 
             Var.RunSprite.draw(Var.AnimationBatch); //Laufanimation projezieren
 
@@ -33,10 +33,10 @@ public class KeyHandler
             Var.RunAnimationBool = true; //Rennen = true
 
             //Alle Sprites um -12(x) bewegen
-            Var.RunSprite.translateX(-12f);
-            Var.JumpSprite.translateX(-12f);
-//            Main.GeschenkeSprite.translateX(-12f);
-            Var.IdleSprite.translateX(-12f);
+            Var.RunSprite.translateX(-24f);
+            Var.JumpSprite.translateX(-24f);
+//            Main.GeschenkeSprite.translateX(-24f);
+            Var.IdleSprite.translateX(-24f);
 
             if(Var.RunSprite.isFlipX() == false) //wenn Spieler nach rechts guckt
             {
@@ -54,16 +54,16 @@ public class KeyHandler
 
             Var.JumpAnimationBool = true; //Springen = true
 
-            if(Var.JumpTime < 460) //Wenn yCord(Kopie) < 460 und nicht Runterfallen:
+            if(Var.JumpTime < 520) //Wenn yCord(Kopie) < 460 und nicht Runterfallen:
             {
 
-                Var.JumpTime += 20; //yCord(Kopie) +20
+                Var.JumpTime += 50; //yCord(Kopie) +20
 
                 //Alle Sprites +20(y) bewegen
-                Var.RunSprite.translateY(+20f);
-                Var.JumpSprite.translateY(+20f);
-//               Main.GeschenkeSprite.translateY(+20f);4
-                Var.IdleSprite.translateY(+20f);
+                Var.RunSprite.translateY(+50f);
+                Var.JumpSprite.translateY(+50f);
+//               Main.GeschenkeSprite.translateY(+50f);4
+                Var.IdleSprite.translateY(+50f);
 
             }
 

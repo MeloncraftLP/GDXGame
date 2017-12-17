@@ -141,9 +141,9 @@ public class CreateClass
     public static void CreateTree()
     {
 
-        Var.TreeTexture = new Texture("Sprites/Idle.png"); //Bild von Baum
+        Var.TreeTexture = new Texture("Sprites/Tree.png"); //Bild von Baum
         Var.TreeSprite = new Sprite(Var.TreeTexture); //Sprite = Texture
-        Var.TreeSprite.setPosition(0,0);
+        Var.TreeSprite.setPosition(100,0);
 
     }
 
