@@ -13,7 +13,7 @@ public class DesktopLauncher
 
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
 		config.width = 1350;
-		config.title = "Frohe Weihnachten!      v0.0.26";
+		config.title = "Frohe Weihnachten!      v0.0.27";
 		config.height = 955;
 		new LwjglApplication(new Main(), config);
 

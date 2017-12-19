@@ -16,7 +16,7 @@ public class crd
         CreateClass.CreateAnimationJump();
         CreateClass.CreateAnimationIdle();
         CreateClass.CreateTree();
-        CreateClass.CreateBackgrouund();
+        CreateClass.CreateHintergrund();
         //CreateClass.CreateAnimationGeschenke();
 
     }
@@ -30,7 +30,8 @@ public class crd
 
         Var.AnimationBatch.begin();//projector
 
-        Var.BackgorundSprite.draw(Var.AnimationBatch);
+        Var.HintergrundSprite.draw(Var.AnimationBatch);
+        Var.HintergrundSprite.setScale(4.8f);
         Var.TreeSprite.draw(Var.AnimationBatch);
         KeyHandler.KeyHandlerMeth();
         //Var.TreeSprite.draw(Var.AnimationBatch);

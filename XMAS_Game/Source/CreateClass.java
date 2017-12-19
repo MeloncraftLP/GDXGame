@@ -147,12 +147,12 @@ public class CreateClass
 
     }
 
-    public static void CreateBackgrouund()
+    public static void CreateHintergrund()
     {
 
-        Var.BackgroundTexture = new Texture("Sprites/Hinter.jpg"); //Bild von Baum
-        Var.BackgorundSprite = new Sprite(Var.BackgroundTexture); //Sprite = Texture
-        Var.BackgorundSprite.setPosition(0,0);
+        Var.HintergrundTexture = new Texture("Sprites/Hinter.jpg"); //Bild von Baum
+        Var.HintergrundSprite = new Sprite(Var.HintergrundTexture); //Sprite = Texture
+        Var.HintergrundSprite.setPosition(50,0);
 
     }
 

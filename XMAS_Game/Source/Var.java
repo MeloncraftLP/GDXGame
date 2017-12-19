@@ -38,14 +38,14 @@ public class Var
     //libGDX:
     static SpriteBatch AnimationBatch;
 
-    static TextureRegion [][] TreeRegion;
+    static Sprite HintergrundSprite;
+    static Texture HintergrundTexture;
 
     static Texture RunTexture;
     static Texture TreeTexture;
     static Texture IdleTexture;
     //static Texture GeschenkeTexture;
     static Texture JumpTexture;
-    static Texture BackgroundTexture;
 
     static TextureRegion[][] RunRegion;
     static TextureRegion [][] IdleRegion;
@@ -57,6 +57,5 @@ public class Var
     static Sprite IdleSprite;
     //static Sprite GeschenkeSprite;
     static Sprite JumpSprite;
-    static Sprite BackgorundSprite;
 
 }
