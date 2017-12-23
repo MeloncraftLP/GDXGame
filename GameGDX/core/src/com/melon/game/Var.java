@@ -1,16 +1,10 @@
 package com.melon.game;
 
-import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.math.*;
-import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
-import com.badlogic.gdx.physics.box2d.World;
-
-import java.awt.*;
-import java.awt.Rectangle;
 
 public class Var
 {
@@ -18,8 +12,15 @@ public class Var
     static com.badlogic.gdx.math.Rectangle HitBoxPlayer = new com.badlogic.gdx.math.Rectangle();
     static com.badlogic.gdx.math.Rectangle HitBoxBaum = new com.badlogic.gdx.math.Rectangle();
 
+    static boolean Overlap;
+
     //Var:
     static int JumpTime = 0;
+
+    static Sprite LogoSprite;
+    static Texture LogoTexture;
+    static Texture WhiteTex;
+    static Sprite White;
 
     static int RunZeile = 0;
     static int IdleZeile = 0;
@@ -40,17 +41,21 @@ public class Var
 
     static TextureRegion [][] TreeRegion;
 
+    static BitmapFont GameOver = new BitmapFont();
+
     static Texture RunTexture;
     static Texture TreeTexture;
     static Texture IdleTexture;
     //static Texture GeschenkeTexture;
     static Texture JumpTexture;
     static Texture BackgroundTexture;
+    static Texture DeadTexture;
 
     static TextureRegion[][] RunRegion;
     static TextureRegion [][] IdleRegion;
     //static TextureRegion [][] GeschenkeRegion;
     static TextureRegion [][] JumpRegion;
+static TextureRegion [][] DeadRegion;
 
     static Sprite RunSprite;
     static Sprite TreeSprite;
@@ -58,5 +63,6 @@ public class Var
     //static Sprite GeschenkeSprite;
     static Sprite JumpSprite;
     static Sprite BackgorundSprite;
+    static Sprite DeadSprite;
 
 }

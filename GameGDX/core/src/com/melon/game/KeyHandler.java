@@ -3,7 +3,6 @@ package com.melon.game;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
-import com.badlogic.gdx.InputProcessor;
 
 
 public class KeyHandler
@@ -15,69 +14,82 @@ public class KeyHandler
         if(Gdx.input.isKeyPressed(Input.Keys.RIGHT) && Var.RunAnimationBool == false) //Pfeil-Rechts und nicht rennen
         {
 
-            Var.RunAnimationBool = true; //Rennen = true
+            if(Var.Overlap == false)
+            {
 
-            //Alle Sprites um +12(x) bewegen
-            Var.RunSprite.translateX(+24f);
-            Var.JumpSprite.translateX(+24f);
+                Var.RunAnimationBool = true; //Rennen = true
+
+                //Alle Sprites um +12(x) bewegen
+                Var.RunSprite.translateX(+24f);
+                Var.JumpSprite.translateX(+24f);
 //            Main.GeschenkeSprite.translateX(+24f);
-            Var.IdleSprite.translateX(+24f);
+                Var.IdleSprite.translateX(+24f);
 
-            Var.RunSprite.draw(Var.AnimationBatch); //Laufanimation projezieren
+                Var.RunSprite.draw(Var.AnimationBatch); //Laufanimation projezieren
+
+            }
 
         }
 
         if(Gdx.input.isKeyPressed(Input.Keys.LEFT) && Var.RunAnimationBool == false) //Pfeil-Links und nicht rennen
         {
 
-            Var.RunAnimationBool = true; //Rennen = true
-
-            //Alle Sprites um -12(x) bewegen
-            Var.RunSprite.translateX(-24f);
-            Var.JumpSprite.translateX(-24f);
-//            Main.GeschenkeSprite.translateX(-24f);
-            Var.IdleSprite.translateX(-24f);
-
-            if(Var.RunSprite.isFlipX() == false) //wenn Spieler nach rechts guckt
+            if(Var.Overlap == false)
             {
 
-                Var.RunSprite.flip(true, false); //Spieler drehen
+                Var.RunAnimationBool = true; //Rennen = true
+
+                //Alle Sprites um -12(x) bewegen
+                Var.RunSprite.translateX(-24f);
+                Var.JumpSprite.translateX(-24f);
+//            Main.GeschenkeSprite.translateX(-24f);
+                Var.IdleSprite.translateX(-24f);
+
+                if (Var.RunSprite.isFlipX() == false) //wenn Spieler nach rechts guckt
+                {
+
+                    Var.RunSprite.flip(true, false); //Spieler drehen
+
+                }
+
+                Var.RunSprite.draw(Var.AnimationBatch); //Laufanimation projezieren
 
             }
-
-            Var.RunSprite.draw(Var.AnimationBatch); //Laufanimation projezieren
 
         }
 
         if(Gdx.input.isKeyPressed(Input.Keys.UP) && Var.JumpAnimationBool == false) //Wenn Pfeil-Hochh und nicht springen
         {
 
-            Var.JumpAnimationBool = true; //Springen = true
-
-            if(Var.JumpTime < 520) //Wenn yCord(Kopie) < 460 und nicht Runterfallen:
+            if(Var.Overlap == false)
             {
 
-                Var.JumpTime += 50; //yCord(Kopie) +20
+                Var.JumpAnimationBool = true; //Springen = true
 
-                //Alle Sprites +20(y) bewegen
-                Var.RunSprite.translateY(+50f);
-                Var.JumpSprite.translateY(+50f);
+                if (Var.JumpTime < 520) //Wenn yCord(Kopie) < 460 und nicht Runterfallen:
+                {
+
+                    Var.JumpTime += 50; //yCord(Kopie) +20
+
+                    //Alle Sprites +20(y) bewegen
+                    Var.RunSprite.translateY(+50f);
+                    Var.JumpSprite.translateY(+50f);
 //               Main.GeschenkeSprite.translateY(+50f);4
-                Var.IdleSprite.translateY(+50f);
+                    Var.IdleSprite.translateY(+50f);
 
-            }
+                } else // yCord(Kopie) > 460
+                {
 
-            else // yCord(Kopie) > 460
-            {
+                    KeyHandler.RunterFallen(); //Runterfallen einleiten
 
-                KeyHandler.RunterFallen(); //Runterfallen einleiten
+                }
 
-            }
+                if (Var.RunAnimationBool == false) //Schließlich wenn man nicht rennt:
+                {
 
-            if(Var.RunAnimationBool == false) //Schließlich wenn man nicht rennt:
-            {
+                    Var.JumpSprite.draw(Var.AnimationBatch); //Sprunganimation projezieren
 
-                Var.JumpSprite.draw(Var.AnimationBatch); //Sprunganimation projezieren
+                }
 
             }
 
@@ -114,7 +126,12 @@ public class KeyHandler
         else
         {
 
-            Var.IdleSprite.draw(Var.AnimationBatch); //Idleanimation projezieren
+            if(Var.Overlap == false)
+            {
+
+                Var.IdleSprite.draw(Var.AnimationBatch); //Idleanimation projezieren
+
+            }
 
         }
 

@@ -3,6 +3,7 @@ package com.melon.game;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.utils.Timer;
 
 public class CreateClass
@@ -138,21 +139,44 @@ public class CreateClass
 
         */
 
+
     public static void CreateTree()
     {
 
         Var.TreeTexture = new Texture("Sprites/Tree.png"); //Bild von Baum
         Var.TreeSprite = new Sprite(Var.TreeTexture); //Sprite = Texture
-        Var.TreeSprite.setPosition(100,0);
+        Var.TreeSprite.setPosition(1000,0);
 
     }
 
-    public static void CreateBackgrouund()
+    public static void CreateBackground()
     {
 
         Var.BackgroundTexture = new Texture("Sprites/Hinter.jpg"); //Bild von Baum
         Var.BackgorundSprite = new Sprite(Var.BackgroundTexture); //Sprite = Texture
         Var.BackgorundSprite.setPosition(0,0);
+
+    }
+
+    public static void CreateHitBox()
+    {
+
+        Var.HitBoxBaum = new Rectangle(Var.TreeSprite.getX(), Var.TreeSprite.getY(), Var.TreeSprite.getWidth(), Var.TreeSprite.getHeight());
+        Var.HitBoxPlayer = new Rectangle(Var.RunSprite.getX() + 200, Var.RunSprite.getY() + 25, 350, 575);
+
+    }
+
+    public static void GameOverCreate()
+    {
+
+        Var.LogoSprite = new Sprite();
+        Var.LogoTexture = new Texture("Logo.png"); //Bild von Baum
+        Var.LogoSprite = new Sprite(Var.LogoTexture); //Sprite = Texture
+        Var.LogoSprite.setPosition(0,0);
+        Var.White = new Sprite();
+        Var.WhiteTex = new Texture("badlogic.jpg"); //Bild von Baum
+        Var.White = new Sprite(Var.WhiteTex); //Sprite = Texture
+        Var.White.setPosition(0,0);
 
     }
 

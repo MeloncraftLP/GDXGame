@@ -1,5 +1,7 @@
 package com.melon.game;
 
+//250, 600
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -16,7 +18,9 @@ public class crd
         CreateClass.CreateAnimationJump();
         CreateClass.CreateAnimationIdle();
         CreateClass.CreateTree();
-        CreateClass.CreateBackgrouund();
+        CreateClass.GameOverCreate();
+        CreateClass.CreateBackground();
+        CreateClass.CreateHitBox();
         //CreateClass.CreateAnimationGeschenke();
 
     }
@@ -32,10 +36,24 @@ public class crd
 
         Var.BackgorundSprite.draw(Var.AnimationBatch);
         Var.TreeSprite.draw(Var.AnimationBatch);
+
+        Var.Overlap = Var.HitBoxPlayer.overlaps(Var.HitBoxBaum);
+
         KeyHandler.KeyHandlerMeth();
-        //Var.TreeSprite.draw(Var.AnimationBatch);
-        Var.HitBoxPlayer.set((int)Var.RunSprite.getX(), (int)Var.RunSprite.getY(), (int)Var.RunSprite.getWidth(),  (int)Var.RunSprite.getHeight());
-        Var.HitBoxBaum.set((int)Var.TreeSprite.getX(), (int)Var.TreeSprite.getY(), (int) Var.TreeSprite.getWidth(), (int)Var.TreeSprite.getHeight());
+
+        if(Var.Overlap == true)
+        {
+
+            Var.White.draw(Var.AnimationBatch);
+            Var.LogoSprite.draw(Var.AnimationBatch);
+
+            Var.GameOver.draw(Var.AnimationBatch, "GAME OVER!", 250,955/2+100);
+            Var.GameOver.getData().setScale(10);
+            Var.GameOver.setColor(0,0,0,1);
+
+        }
+
+        Var.HitBoxPlayer.setPosition(Var.RunSprite.getX() + 200, Var.RunSprite.getY() + 25);
 
         Var.RunAnimationBool = false; //Booleans
         Var.JumpAnimationBool = false;
@@ -60,12 +78,15 @@ public class crd
         //beenden
         Var.AnimationBatch.dispose();
 
+        Var.Logo.dispose();
+        Var.BackgroundTexture.dispose();
+        Var.DeadTexture.dispose();
+        Var.TreeTexture.dispose();
+        Var.WhiteTex.dispose();
         Var.RunTexture.dispose();
         Var.IdleTexture.dispose();
         Var.JumpTexture.dispose();
         //GeschenkeTexture.dispose();
-
-        Var.Logo.dispose();
 
     }
 
